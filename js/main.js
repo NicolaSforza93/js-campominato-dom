@@ -35,7 +35,7 @@ btnDomElement.addEventListener('click', function() {
         // console.log(currentCell);
 // - aggiungo l'event listener ad ogni cella
         currentCell.addEventListener('click', function() {
-            console.log('La casella cliccata è la numero ' + (i + 1));
+            // console.log('La casella cliccata è la numero ' + (i + 1));
 //          - prendo il numero della cella
             const numCell = (i + 1);
             console.log(numCell);
@@ -55,7 +55,7 @@ btnDomElement.addEventListener('click', function() {
             if (score === 84) {
                 alert('Hai vinto');
             } else if (bombs.includes(numCell)) {
-                alert(`Game over! Il tuo score è di ${score}`); 
+                alert(`Game over! Il tuo score è di ${score}`);         
             }
         })
     }    

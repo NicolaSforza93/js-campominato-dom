@@ -33,6 +33,7 @@
 
 .bg-blue {
     background-color: lightskyblue;
+    pointer-events: none;
 }
 
 .bg-red {
