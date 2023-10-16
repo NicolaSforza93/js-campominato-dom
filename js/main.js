@@ -5,8 +5,9 @@ const gridDomElement = document.querySelector('.grid');
 // - recupero dal Dom l'elemento con la classe btn-play
 const btnDomElement = document.getElementById('btn-play');
 // console.log(btnDomElement);
-
-
+// - inizializzo la variabile score con valore 0
+let score = 0;
+// console.log(score);
 // - aggiungo all'elemento button l'event listener e una funzione che andrà a generare la griglia
 btnDomElement.addEventListener('click', function() {
 // - svuoto la griglia generata in precedenza
@@ -14,6 +15,7 @@ btnDomElement.addEventListener('click', function() {
 // - inizializzo una variabile che richiama la funzione getArrayOfRandomIntBetween
     const bombs = getArrayOfRandomIntBetween(1, 100, 16);
     console.log(bombs);
+   
 // - apro un ciclo for per generare le 100 celle
     for (let i = 0; i < 100; i ++) {
         const n = i + 1;
@@ -33,8 +35,28 @@ btnDomElement.addEventListener('click', function() {
         // console.log(currentCell);
 // - aggiungo l'event listener ad ogni cella
         currentCell.addEventListener('click', function() {
-            currentCell.classList.add('bg-blue');
             console.log('La casella cliccata è la numero ' + (i + 1));
+//          - prendo il numero della cella
+            const numCell = (i + 1);
+            console.log(numCell);
+//          - SE il numero della casella è presente nell'array di bombe
+            if (bombs.includes(numCell)) {
+//              - aggiungo la classe bg-red
+                currentCell.classList.add('bg-red');
+//          - ALTRIMENTI         
+            } else {
+//              - aggiungo la classe bg-blue
+                currentCell.classList.add('bg-blue');
+//              - aumento lo score
+                score++;
+                console.log(score);
+            }
+
+            if (score === 84) {
+                alert('Hai vinto');
+            } else if (bombs.includes(numCell)) {
+                alert(`Game over! Il tuo score è di ${score}`); 
+            }
         })
     }    
 })
