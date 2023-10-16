@@ -1,0 +1,36 @@
+.container {
+    width: 500px;
+    background-color: #BDBDBD;
+}
+
+.grid, .top-space {
+    border: 6px;
+    border-style: inset;
+}
+
+.btn {
+    border: 6px;
+    border-style: outset;
+}
+
+.btn:active {
+    border-style: inset;
+}
+
+.cell {
+    aspect-ratio: 1;
+    width: calc(100%/10);
+    border: 4px solid lightgray;
+    border-style: outset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:active {
+    border-style: inset;
+}
+
+.bg-blue {
+    background-color: lightskyblue;
+}
