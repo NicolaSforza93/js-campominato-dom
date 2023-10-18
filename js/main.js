@@ -55,11 +55,12 @@ btnDomElement.addEventListener('click', function() {
             if (score === 84) {
                 alert('Hai vinto');
             } else if (bombs.includes(numCell)) {
-                alert(`Game over! Il tuo score è di ${score}`);         
+                alert(`Game over! Il tuo score è ${score}`);
             }
         })
     }    
 })
+
 
 // - dichiaro una funzione che generi 16 numeri casuali nel range prescelto
 function getArrayOfRandomIntBetween (minRange, maxRange, number) {
@@ -75,7 +76,6 @@ function getArrayOfRandomIntBetween (minRange, maxRange, number) {
             // - pushare il numero nell'array
             bombsArray.push(n);
         }
-        
     }
     return bombsArray
 }

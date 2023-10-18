@@ -38,4 +38,5 @@
 
 .bg-red {
     background-color: red;
+    pointer-events: none;
 }
